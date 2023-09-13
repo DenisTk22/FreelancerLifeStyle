@@ -1,0 +1,67 @@
+
+/** .bigred {
+    font-size: 20px;
+    color: red;
+}
+
+span.bigred { /** свойство будет применено ко всем span с классом bigred*/
+    /* font-size: 20px;
+    color: green;
+}
+
+/* .bigred span { /** свойство будет применено ко всем span, входящие в класс bigred родителя*/
+    /* color: blue;
+} */ 
+
+/* .block {
+    border: 1px solid black;
+} */
+/* .block>p { /** свойство будет применено к <p> верхнего уровня, а к <p> более вложенным свойство не применится*/
+    /* color: yellow;
+} */
+
+/* Обнуляющий стиль, каждый браузер отображает стили по разному */
+
+* { /**Обнуление стиля по отступам и границам у всех тегов не странице*/
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+*,*:before,*:after { /**меняет подсчет ширины блок для удобства верстки*/
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Убираем линии обводки у некоторых браузеров */
+:focus,:active{outline: none;}
+a:focus, a:active{outline: none;}
+
+/* делаем данные теги блочными: */
+nav, footer,header,aside{display: block;}
+
+/* Обратимся к html и body и уравняем их параметры для разных браузеров, в том числе на мобильных приложениях */
+html,body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Просим наследовать данные теги семейство шрифтов: */
+input, button, textarea {font-family: inherit;}
+
+/* Убираем настройки разных браузеров */
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0; border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li {list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6 {font-size: inherit; font-weight: 400;}

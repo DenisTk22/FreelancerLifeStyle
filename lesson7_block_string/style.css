@@ -1,0 +1,11 @@
+.example_block {
+    padding: 10px 20px 30px 40px; 
+    
+
+    border: 1px solid #000;
+}
+
+.example_string {
+    display: inline-block;
+
+}

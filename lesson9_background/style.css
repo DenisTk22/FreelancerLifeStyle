@@ -1,0 +1,15 @@
+body {
+    padding: 30px;
+}
+
+.block {
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px green;
+    background-image: url('../img/gopro_200px.jpg');
+    background-repeat: no-repeat;
+    /* background-position: top center; */
+    background-position: 50%;
+    background-size: cover;
+
+}

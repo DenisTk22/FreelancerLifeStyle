@@ -1,0 +1,90 @@
+## Background, управление фоном элемента
+- Быстрый вызов: bg+ --tab-> background: url('') 0 0 no-repeat;
+- Цвет фона (background-color)
+        1ый вариант задания цвета фона: background: transparent; - цвет прозрачный
+        2ой вариант задания цвета фона: background-color: transparent;
+
+        Варианты задания цвета:
+                словами: transparent, green, black, white и т.д.
+                16ти ричным кодом: #18b5a4, #000 или #000000 и т.д
+                RGB кодом: rgb(24,181,164) и т.д.
+                RGBA кодом: rgba(24,181,164,0.5) и т.д., 0.5 - альфа канал (прозрачность)
+- Фоновая картинка (background-image)
+        1ый вариант задания цвета фона: background: url('../img/ava.jpg');
+        2ой вариант задания цвета фона: background-image: url('../img/ava.jpg');
+
+        Также можно залить фон градиентом (для разных браузеров по разному):
+                /* Old browsers */
+                    background: rgb(236,232,157);
+                /* FF3.6-15 */
+                    background: -moz-linear-gradient(top, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+                /* Chrome10-25, Safari5.1-6 */
+                    background: -webkit-linear-gradient(top, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari17+ */
+                    background: linear-gradient(to bottom, rgba(236,232,157,1) 0%,rgba(94,83,115,1) 50%,rgba(24,181,164,1) 100%);
+                            top, to bottom - начало старта цвета
+                            https://www.colorzilla.com/gradient-editor/ - создание кода градиента
+
+- Повторение фонового изображения (background-repeat)
+        1ый вариант написания: background: url('../img/ava.jpg') repeat;
+        2ой вариант написания: background-image: url('../img/ava.jpg');
+                               background-repeat: repeat;
+        - repeat; повторение - по умолчанию.
+        - no-repeat; не повторять.
+        - repeat-x; повторение картинки только по горизонтали.
+        - repeat-y; повторение картинки только по вертикали.
+        - space; заполнение целым числом картинок, есть отступы между картинками
+        - round; заполнение целым числом картинок, отступов между картинками нет - растягивает картинки
+
+- Начальное положение фонового изображения (background-position)
+        1ый вариант написания: background: url('../img/ava.jpg') 0 0 no-repeat;
+        2ой вариант написания: background-image: url('../img/ava.jpg') top left no-repeat;
+        3ий вариант написания: background-image: url('../img/ava.jpg');
+                               background-repeat: no-repeat;
+                               background-position: top left;
+
+        Процентное обозначение: 0 0 - левый верхний угол 
+                              0 50% - слева по центру (0 по горизонтали, 50% по вертикали)
+                              50% - по центру блока
+
+        Словесное обозначение: top left - левый верхний угол
+                               top center - top по вертикали, center по горизонтали
+                               center - по центру блока
+
+        Пиксельное обозначение: 25px 30px - 25px от левого края по горизонту, 30px от верха по вертикали
+                               
+- Прокручивание фонового изображения вместе с содержимым элемента (background-attachment)
+        1ый вариант написания: background: url('../img/ava.jpg') 0 0 no-repeat scroll;
+        2ой вариант написания: background-image: url('../img/ava.jpg');
+                               background-repeat: no-repeat;
+                               background-position: 0 0;
+                               background-attachment: scroll;
+
+        - scroll - фон прокручивается вместе с экраном.
+        - fixed - фон не прокручивается вместе с экраном.
+        - local - фон фиксируется в зависимости от заполнености элемента
+
+- Размер фона, масштабирование (background-size)
+        1ый вариант написания: background: url('../img/ava.jpg') 0 0/auto auto no-repeat;
+        2ой вариант написания: background-image: url('../img/ava.jpg');
+                               background-repeat: no-repeat;
+                               background-position: 0 0;
+                               background-size: 100% auto; /* ширина=100% высота-автоподстройка (можно записать background-size: 100%;) */
+        Примечание: измеряется в px / % / auto
+        - contain - масштабирование по меньшей стороне
+        - cover - вписывает картинку по большей стороне блока. 
+                Если позиционировать картинку по центру: background-position: 50%; и background-size: cover;
+                то при изменении размера окна браузера, картинка будет масштабироваться
+
+- Установка нескольких фоновых изображений (две, три картинки и тд.) для блока
+        одна картинка и цвет: background: #18b5a4 url('../img/ava.jpg') no-repeat;
+                                                        или
+                              background-color: #18b5a4;
+                              background-image: url('../img/ava.jpg');
+                              background-repeat: no-repeat;
+        две картинки: background: url('../img/ava.jpg') left no-repeat, url('../img/ava10.jpg') 50%/cover no-repeat;
+                                                        или
+                      background-image: url('../img/ava.jpg'), url('../img/ava10.jpg');
+                      background-repeat: no-repeat;
+                      background-position: left, 50%;
+                      background-size: auto auto, cover;                          
