@@ -27,9 +27,79 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-.text {
-    font-size: 24px;
-    line-height: 33px;
-    margin: 0 0 30px 0;
+body {
+	padding: 30px;
 }
 
+.text1 {
+    margin: 10px 0 20px 0;
+}
+
+.text2::first-line {
+	color: green;
+}
+
+.text1::first-letter {
+	color: blue;
+	font-size: 50px;
+}
+
+
+/* .list li::before {
+	content: "«";
+}
+
+.list li::after {
+	content: "»";
+} */
+
+.list li::before {
+	content: '';
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: red;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.list li:hover:before {
+	background-color: yellowgreen;
+}
+
+.pata li::before {
+	content: "";
+	background-image: url('../img/galochka.jpg');
+	background-size: contain;
+	width: 10px;
+	height: 10px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	
+}
+
+.textbutton {
+	width: 150px;
+	height: 30px;
+	border-radius: 15px;
+	background-color: rgb(24,181,164);
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	margin: 10px 50px 10px;
+	
+}
+
+
+.textbutton::after {
+	content: " -→";
+}
+
+.textbutton:hover {
+	background-color: rgba(221, 13, 228, 1);
+}
+
+.textbutton:active {
+	background-color: rgba(221, 13, 228, 0.5);
+}
