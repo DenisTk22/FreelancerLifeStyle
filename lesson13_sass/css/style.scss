@@ -1,0 +1,64 @@
+@import "zerostyle.scss";
+
+// Переменные
+$fz:80px;
+$color_1:red;
+$color_2:green;
+$color_3:blue;
+
+// Шаблоны
+%tplborder { // этот класс не выводится в файл css
+    // font-size: 100px;
+    border-bottom: 5px dashed red;
+}
+    // или
+.fzw { // этот класс выводится в файл css
+    font-size: 100px;
+}
+
+//Миксины
+@mixin fontz($f, $c) { //$f - название переменной
+    font-size: $f;
+    color: $c;
+}
+
+.block {
+    width: 300px / 960px * 100%;
+    background-color: #667;
+    padding: 30px;
+    font-size: 50px;
+    line-height: 60px;
+    >p {               // >p - свойство применяется только к p первой вложенности
+        color: $color_1;
+    }
+    .block_text {
+        font-size: $fz; // font-size: 80px;
+        span {
+        color: $color_3;
+        }
+    }
+    &.block--big {
+        font-size: 50px;
+    }
+}
+
+.link {
+    @include fontz(25px, rgb(216, 157, 47));
+    // color: $color_2;
+    text-decoration: underline;
+    font-size: $fz;
+    .block & {
+        font-size: $fz;
+    }
+
+    &:hover {        // & = .link (родительский класс)
+        color:$color_2;
+    }
+    @extend %tplborder;
+    @extend .fzw;
+}
+
+.link-2 {
+    @include fontz(50px, yellow);
+    @extend %tplborder;
+}

@@ -1,0 +1,111 @@
+## Препроцессор sass
+- Важно. В sccs можно работать, но не напрямую, нужен специальный компилятор, который будет переводить синтаксис sccs в css и уже css файл будет прописан в html файле и влиять на стили браузера.
+- **Вложенность** - возможность писать правила css внутрь других правил:
+     .block {
+        padding: 30px;
+        font-size: 50px;
+        line-height: 60px;
+        >p {               // >p - свойство применяется только к p первой   вложенности
+            color: red;
+        }
+        .block_text {
+            font-size: 80px;
+            span {
+            color: blue;
+         }
+        }
+    }
+
+- **Оператор И &**
+    - sass заменяет значок & на класс родителя:
+        - .link {
+            color: blue;
+            text-decoration: underline;
+            font-size: 20px;
+
+            .block & {
+                font-size: 100px;
+            }
+
+            &:hover {        // & = .link (родительский класс)
+                color:green;
+            }
+        }
+
+- **Переменные**
+    - /*Переменные*/
+        $fz:80px;
+        $color_1:red;
+        $color_2:green;
+        $color_3:blue;
+
+        .link {
+            color: $color_2;
+            text-decoration: underline;
+            font-size: $fz;
+            .block & {
+                font-size: $fz;
+            }
+
+            &:hover {        // & = .link (родительский класс)
+                color:$color_2;
+            }
+        }
+
+- **Импорт** других файлов стилей
+    - Можно убрать свойство, которые мы не часто меняем, например Обнуление в другой файл sccs, а в рабочем файле sccs указать на него ссылку: 
+        - @import "zerostyle.scss";
+
+- **Шаблоны**
+    - // Шаблоны
+        %tplborder { // этот класс не выводится в файл css
+            // font-size: 100px;
+            border-bottom: 5px dashed red;
+        }
+            // или
+        .fzw { // этот класс выводится в файл css
+            font-size: 100px;
+        }
+
+        .link {
+            color: $color_2;
+            text-decoration: underline;
+            font-size: $fz;
+            .block & {
+                font-size: $fz;
+            }
+
+            &:hover {        // & = .link (родительский класс)
+                color:$color_2;
+            }
+            **@extend %tplborder;**
+            **@extend .fzw;**
+        }
+
+- **Миксины или примеси** подобие функций с входящими переменными. В один и тот же миксин можно вставлять разные значения свойств у разных блоков
+    - // Миксины
+        @mixin fontz($f, $c) { //$f - название переменной
+            font-size: $f;
+            color: $c;
+        }
+
+        .link {
+    @include fontz(25px, rgb(216, 157, 47));
+    text-decoration: underline;
+    font-size: $fz; 
+    }
+
+    .link-2 {
+        @include fontz(50px, yellow);
+        @extend %tplborder;
+    }
+
+- **Математические операторы**
+    - .block {
+    width: 300px / 960px * 100%;
+    background-color: #667;}
+
+- **Комментарии**
+    - В файле sccs можно для закомментирования использовать двойной слеш // - такие комментарии не попадут в файл css
+
+- **О других возможностях sass можно узнать на официальном сайте https://sass-scss.ru/
