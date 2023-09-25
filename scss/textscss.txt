@@ -1,0 +1,9 @@
+Запуск конвертации scss файла в css:
+1. В терминале запиши: > npm install node-sass
+2. Зайти в файл package.json и добавить скрипт:
+        "script": {
+            "watcher:scss": "node-sass -w css/style.scss css/style.css"
+        }
+3. В терминале запустить скрипт > npm run watch:scss
+
+4. Для выхода нажми ctrl+c
