@@ -1,0 +1,8 @@
+## Flex#3
+- **display: flex;**
+    - **flex-direction: ;** задание оси, по которой выстраиваются flex-элементы
+        - **flex-direction: row;** - значение по умолчанию, flex-элементы выстраиваются в ряд.
+        - **flex-direction: row-reverse;** - flex-элементы разворачиваются задом наперед.
+        - **flex-direction: column;** - flex-элементы выстраиваются в колонку стартуют сверху..
+            - **align-item: ; / justify-content: ; / order: ;** - работают аналогично, но основная ось - вертикальная
+        - **flex-direction: column-reverse;** - flex-элементы стартуют снизу.
