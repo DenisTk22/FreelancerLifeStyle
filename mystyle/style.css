@@ -1,0 +1,47 @@
+@import '../scss/zerostyle.css';
+@import './style2.css';
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.header {
+    border: 2px solid red;
+}
+.contain {
+    border: 2px solid green;
+    flex: 1 1 auto;
+}
+
+.footer {
+    /* background-color: brown; */
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer_container {
+    width: 80%;
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.footer_row {
+    height: 60px;
+    width: 60%;
+    justify-content: center;
+    border: 2px solid rgb(47, 0, 255);
+    display: flex;
+   
+}
+
+.footer_text {
+    color: #2a099f;
+    border: 2px solid red;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
