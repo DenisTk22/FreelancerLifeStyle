@@ -1,5 +1,12 @@
 @import '../scss/zerostyle.css';
 @import './style2.css';
+:root {
+--color_1:red; /*red*/
+--color_2:green; /*green*/
+--color_3:blue; /*blue*/
+
+}
+
 
 .page {
     display: flex;
@@ -7,23 +14,80 @@
     min-height: 100%;
 }
 .header {
-    border: 2px solid red;
+    border: 2px solid var(--color_1);
+    display: flex;
+    height: 60px;
+    background-color: rgb(171, 228, 183);
+
 }
+
+.header_text {
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color_2);
+    font-size: 24px;
+}
+
 .contain {
-    border: 2px solid green;
+    border: 2px solid var(--color_2);
     flex: 1 1 auto;
+    display: flex;
 }
+
+.contain_container {
+    border: 2px solid var(--color_3);
+    display: flex;
+    min-width: 100%;
+    /* max-height: 50%; */
+    /* min-height: 100%; */
+   
+}
+
+.contain_row1 {
+    display: flex;
+    min-width: 60%;
+    /* min-height: 100%; */
+    border: 2px solid var(--color_1);
+    justify-content: center; /*выравнивание по центру горизонтали*/
+    align-items: center; /*выравнивание по центру вертикали*/
+}
+.contain_row1_text {
+    text-align: center;
+}
+.contain_row2 {
+    
+    /* min-height: 100%; */
+    min-width: 40%;
+    border: 2px solid var(--color_1);
+    display: flex;
+    justify-content: center; /*выравнивание по центру горизонтали*/
+    align-items: center; /*выравнивание по центру вертикали*/
+}
+.contain_row2_picture {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: 250px; */
+    border: 2px solid var(--color_2);
+}
+
+.picture {
+    width: 250px;
+}
+
 
 .footer {
     /* background-color: brown; */
-    border: 2px solid red;
+    border: 2px solid var(--color_1);
     display: flex;
     justify-content: space-around;
 }
 
 .footer_container {
     width: 80%;
-    border: 2px solid red;
+    border: 2px solid var(--color_1);
     display: flex;
     justify-content: space-around;
     
@@ -32,14 +96,14 @@
     height: 60px;
     width: 60%;
     justify-content: center;
-    border: 2px solid rgb(47, 0, 255);
+    border: 2px solid var(--color_3);
     display: flex;
    
 }
 
 .footer_text {
     color: #2a099f;
-    border: 2px solid red;
+    border: 2px solid var(--color_1);
     width: 50%;
     display: flex;
     justify-content: center;
