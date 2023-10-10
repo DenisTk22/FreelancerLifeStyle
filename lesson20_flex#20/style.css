@@ -57,7 +57,7 @@ body {
 }
 
 .what {
-    padding: 50px 0;
+    padding: 25px 0;
 }
 
 .what_row { 
@@ -80,6 +80,57 @@ body {
 }
 .what_text p {
     margin: 0 0 20px 0;
+}
+
+.columns_flex {
+    padding: 0px 0;
+}
+.container_columns {
+    max-width: 1180px;
+    margin: 0px auto;
+    padding: 20px 0px 5px 40px;
+    background: #e6e3e3;
+}
+
+.column_title {
+    text-shadow: 1px 1px 0 rgba(61, 61, 61, 0.3);
+    font-size: 25px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.column_blocks {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+}
+
+.columns_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 50%;
+    margin: 0 0 15px 0;
+}
+.block_square {
+    width: 140px;
+    height: 140px;
+    background: rgb(47, 44, 59);
+    
+}
+
+.column_row {
+    margin: 0 5px 0 10px;
+    max-width: 66%;
+}
+
+.block_title {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    margin: 0px 0px 20px 0px;
+}
+.block_text {
+    margin: 0 0 5px 0;
 }
 
 
