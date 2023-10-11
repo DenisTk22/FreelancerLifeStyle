@@ -4,15 +4,17 @@ body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+
+
 .wrapper {
-    min-height: 100%;
-    overflow: hidden;
+    min-height: 100%; /*чтобы контенет занимал всю высоту окна браузера*/
+    overflow: hidden; /*чтобы ничего не вылазило за пределы окна*/
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*выстраивание flex-элементов в колонну*/
 }
 .content {
-    flex: 1 1 auto; /*flex-grow(можно увеличиваться),flex-shrink(можно уменьшаться),flex-basis.(базовый размер auto) - блок увеличтся прижав футор к низу*/
+    flex: 1 1 auto; /*flex-grow(можно увеличиваться),flex-shrink(можно уменьшаться),flex-basis.(базовый размер auto) - блок увеличтся прижав футор к низу окна*/
 }
 .hi {
     background-color: #445162;
@@ -35,8 +37,8 @@ body {
     font-size: 60px;
     margin: 0px 0px 38px 0px;
 }
-.hi_list {
-
+.hi_list a {
+    color: #a1cfe5;
 }
 
 .hi_list li {
@@ -49,7 +51,7 @@ body {
 }
 
 .hi_list li :last-child {
-    margin: 0px;
+    margin: 0px; /*убирает отступ только у последнего элемента списка*/
 }
 
 .hi_image {
