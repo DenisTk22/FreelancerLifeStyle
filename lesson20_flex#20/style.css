@@ -7,7 +7,7 @@ body {
 
 
 .wrapper {
-    min-height: 100%; /*чтобы контенет занимал всю высоту окна браузера*/
+    min-height: 100%; /*чтобы контент занимал всю высоту окна браузера*/
     overflow: hidden; /*чтобы ничего не вылазило за пределы окна*/
 
     display: flex;
@@ -69,11 +69,16 @@ body {
 }
 .what_image {
     padding: 0px 0px 0px 40px;
+    flex: 0 0 250px;
+}
+
+.what_image img {
+    min-width: 100%;
 }
 
 .what_body {
     padding: 0px 0px 0px 30px;
-
+    flex: 1 1 auto;
 }
 .what_title {
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
@@ -105,6 +110,7 @@ body {
     display: flex;
     /* justify-content: space-between; */
     flex-wrap: wrap;
+    /* margin: -10px; */
 }
 
 .columns_block {
@@ -112,18 +118,19 @@ body {
     justify-content: space-between;
     align-items: center;
     max-width: 50%;
-    margin: 0 0 15px 0;
+    margin: 0 0px 15px 0;
 }
 .block_square {
     width: 140px;
     height: 140px;
     background: rgb(47, 44, 59);
-    
+    flex: 0 0 140px; /*не позволяет изображению уменьшаться менее 140px*/
 }
 
 .column_row {
-    margin: 0 5px 0 10px;
-    max-width: 66%;
+    margin: 0 10px 0 15px;
+    /* max-width: 66%; */
+    flex: 1 1 auto;
 }
 
 .block_title {
@@ -132,7 +139,8 @@ body {
     margin: 0px 0px 20px 0px;
 }
 .block_text {
-    margin: 0 0 5px 0;
+    margin: 0px 5px 5px 0px;
+    text-align: justify;
 }
 
 
