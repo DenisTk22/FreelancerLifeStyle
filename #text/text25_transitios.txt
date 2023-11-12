@@ -1,0 +1,22 @@
+## transitions - переходы/ анимация от одного состояния в другое при взаимодейсиве с элементом, наприме при наведении (hover). http://fls.guru/csstransition.html шпаргалка
+- transition-duration: 1s; - определяет промежуток времени в течение которого будет происходить переход: 0.5s, 500ms. Можно указывать несколько промежутков через ",", если определено свойство transition-property:
+transition-duration: 1s, 500ms, 0.5s;
+- transition-property: all; - содержит названия css-свойств, к которым будет применен эффект перехода.
+    - transition-property: all; (значение по умолчанию - все объекты, поддерживающие анимацию).
+    - transition-property: background-color; анимация будет применена только к свойству background-color.
+    transition-property: background-color, top; анимация будет применена только к свойству background-color и top.
+- transition-delay: 1s; - задержка выпонения перехода. Можно задавать для нескольких свойств, при transition-property
+- transition-timing-function: ease; - задает стиль перехода.
+    - transition-timing-function: ease; (значение по умолчанию) - анимация начинается медленно, к середине разгоняется и к концу замедляется.
+    - transition-timing-function: ease-in; - начало медленное, а потом плавное ускорение.
+    - transition-timing-function: ease-out; - начало быстро, а потом плавное замедление.
+    - transition-timing-function: ease-in-out; - начало медленное и медленно заканчивается.
+    - transition-timing-function: linear; - равномерный переход.
+    - transition-timing-function: steps(int,start/end); - разбиение интервала на int частей, начало действия: start - в начале, end - в конце.
+- transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); - см. сайт https://cubic-bezier.com
+- transition: all 1s ease 0s; : transition-property / transition-duration / transition-timing-function / transition-delay.
+    Для нескольких свойств:
+        - transition: padding 1s ease 0s, color 2s ease-in 0.5s;
+
+Важно! 
+- анимация при наведении записывается в hover, анимация после убирания мышки прописывается в основном теге.
