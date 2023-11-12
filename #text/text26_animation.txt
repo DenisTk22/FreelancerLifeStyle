@@ -1,0 +1,29 @@
+## Animation - анимация, шпаргалка http://fls.guru/cssanimation.html
+- animation-name: <имя ключевых кадров>, <имя ключевых кадров№2>; - можно указывать несколько имен через ",", но приоритет будет у последнего. Имя чуствительно к регистру, нельзя использовать имя none.
+- animation-duration: <время>, <время№2>; - продолжительность анимации в s или ms.
+- animation-timing-function: ease; (значенеи по умолчанию)- задает сценария развития анимации между ключевыми кадрами. Можно писать несколь значений через ",". См. lesson25_transition.
+- animation-iteration-count: 1; (значенеи по умолчанию) - количество повторов ключевых кадров. Можно писать несколь значений через ",".
+    - animation-iteration-count: infinite; - бесконечное повторение.
+- animation-direction: normal; (значенеи по умолчанию) - отпределяет тип и направление проигрование ключевых кадров.
+    - animation-direction: alternate; - каждый **четный** проход по ключевым кадрам будет проигрываться в обратную сторону.
+    - animation-direction: alternate-reverse; - каждый **нечетный** проход по ключевым кадрам будет проигрываться в обратную сторону.
+    - animation-direction: reverse; - анимация будет в обратном порядке.
+- animation-play-state: running; (значенеи по умолчанию) - запускает или приостанавливает анимацию по определенному событию.
+    - animation-play-state: paused; - приостанавливает анимацию.
+    - animation-play-state: none; - сбрасывает анимацию.
+    Можно писать несколь значений через ",".
+- animation-delay: <время>, <время№2>; - задержки анимации.
+    - animation-delay: -1; - запускает анимацию с середины цикла.
+- animation-fill-mode: none; (значенеи по умолчанию) - определяет какие значения анимируемых свойств применятся к объекту после завершения анимации. Можно писать несколь значений через ",".
+    - animation-fill-mode: none; - применяются первоначальные свойства, прописанные в 0%{...}
+    - animation-fill-mode: forwards; - применяются конечные свойства, прописанные в 100%{...}
+
+Краткая запись анимации:
+    - animation: white-circle 2s linear 3 alternate 0s forwards; :
+        animation-name: white-circle;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: 3;
+        animation-direction: alternate;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
