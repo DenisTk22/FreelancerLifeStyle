@@ -1,0 +1,3 @@
+# Grid - сетка
+## display: grid; - блочное отображение
+## display: inline-grid; - строчное отображение
