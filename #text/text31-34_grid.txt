@@ -1,3 +1,106 @@
 # Grid - сетка
 ## display: grid; - блочное отображение
 ## display: inline-grid; - строчное отображение
+- Управление колонками и столбцами:
+    - grid-template-columns: 200px 150px 300px; - задание 3х колонок с разными ширинами (px, %, fr - фракция (доля), auto).
+        - grid-template-columns: 200px minmax(150px, 1fr) 300px; minmax(min, max) - ограничение минимального и максимального значения, то же и для столбца.
+        - Важно! fr не может быть задана для min значения.
+        - grid-template-columns: fit-content(400px) minmax(150px, 1fr) 300px; fit-content(400px) - ограничение по max ширине
+    - grid-template-rows: 200px 300px; - задание двух столбцов с разными ширинами (px, %, fr, auto).
+    - Сокращенная запись:
+        - grid-template-columns: repeat(3, 1fr); - три колонки по 1fr каждая.
+
+- Сокращенная запись:
+    - grid-template: repeate(2, 1fr) / repeat(3, 1fr); - колонки / столбцы
+
+- Задание структуры таблицы:
+    - у родителя:
+        - display: grid;
+        - grid-template-columns: 150px 1fr;
+        - grid-template-rows: 100px 1fr;
+        - grid-template-areas: "header header"  - в первой строке header займет обе ячейки
+                               "side content"; - во второй строке side и content
+    - у дочернего блока1:
+        - grid-area: header;
+    - у дочернего блока2:
+        - grid-area: side;
+    - у дочернего блока2:
+        - grid-area: content;
+
+    - Сокращенная запись:
+        - grid-template:
+                [start] "header header" 100px [row2]
+                [row2] "side content" 1fr [row-end] / 150px 1fr;
+
+- Размещение элементов с помощью линий сетки
+    .grid_item1 {
+    - grid-row-start: auto; (значение по умолчанию - центрирует элемент в яцейке)
+    - grid-row-end: auto; - end можно не указывать, если размер элемента одна ячейка
+    - grid-column-start: auto;
+    - grid-column-end: auto;} - end можно не указывать, если размер элемента одна ячейка
+    1      2     3     4
+    1|_____|_____|_____|  
+    2|_____|_____|_____|          
+    3|_____|_____|_____|
+
+    .grid_item1 {
+    - grid-row-start: 1;
+    - grid-row-end: 3;
+    - grid-column-start: 1;
+    - grid-column-end: 3;}
+    1 _____2_____3_____4
+    2|           |_____|  
+    3|_____ _____|_____|          
+    4|_____|_____|_____|
+
+    .grid_item1 {
+    - grid-row-start: span 2; - span задает количество занимаемых ячеек
+    - grid-column-start: 1;}
+    1 _____2_____3_____4
+    2|     |_____|_____|  
+    3|_____|_____|_____|          
+    4|_____|_____|_____|
+
+- Задание имён линиям колонок и столбцов:
+    - .grid_body {
+        display: grid;
+        grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+        grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+    }
+    - grid_item1 {
+        grid-row-start: start;
+        grid-column-start: col3;
+    }
+
+- Обращение к номера линий через номера:
+    - grid_item1 {
+        grid-row: 1 / 2;
+        grid-column: col2 / col3; - можно комбинировать номера и имена (если заданы) линий
+    }
+
+- Задание порядка отображений ячеек:
+    - grid_item1 {
+        order: 2
+    } 
+    - grid_item2 {
+        order: 3
+    } 
+    - grid_item3 {
+        order: 1
+    } 
+
+- Выравнивание элементов сетки.
+    - justify-items: stretch; - выравнивание по горизонтали, stretch - растягивание
+    - align-items: stretch; - выравнивание по вертикали.
+                 : start; - от начальной линии.
+                 : end; - от конечной линии. 
+
+    - для дочернего элемента:
+        - align-self: stretch;
+        - justify-self: stretch;
+        - margin: auto; - выравнивание по центру
+
+- Задание расстояния между колонками и столбцами (отступы происходят внутрь грид-контейнеров):
+    - row-gap: 0px; (px, %)
+    - column-gap: 0px;
+    - gap: 0px;

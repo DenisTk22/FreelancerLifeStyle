@@ -1,3 +1,51 @@
-.d {
-    display: -ms-inline-grid;
+
+.grid_body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.grid_item {
+    text-align: center;
+    border: 1px dashed rgba(161, 15, 15, 1);
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: "header header"
+                          "side content";
+}
+
+.grid-header,
+.grid-side,
+.grid-content {
+    padding: 30px;
+    border: 2px dashed rgba(161, 15, 15, 1);
+    margin: 0 0 15px 0;
+}
+
+.grid-header {
+    grid-area: header;
+}
+
+.grid-side {
+    grid-area: side;
+}
+
+.grid-content {
+    grid-area: content;
+}
+
+.grid-auto {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(3, 1fr);
+}
+
+.grid-auto_item {
+    text-align: center;
+    border: 1px dashed rgba(161, 15, 15, 1);
+    padding: 30px;
+    font-size: 30px;
 }
