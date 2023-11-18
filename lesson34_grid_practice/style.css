@@ -38,6 +38,11 @@ body {
     grid-auto-flow: column; /*автоматическое заполнение*/
     justify-items: end;
 }
+
+.header__list li{
+    margin: 0 0 0 30px;
+}
+
 .header__link {
     color: #fff;
     font-size: 18px;
@@ -48,25 +53,61 @@ body {
 }
 .header__burger {
 }
+
+@media (max-width: 992px) {
+    .header__list {
+        display: none;
+    }
+
+    .header__menu {
+        display: grid;
+        justify-items: end;
+    }
+
+    .header__burger {
+        width: 30px;
+        display: grid;
+        align-items: center;
+        grid-template: repeat(3, 8px) / 1fr;
+    }
+
+    .header__burger::before {
+        content: "";
+        height: 2px;
+        width: 30px;
+        background-color: #fff;
+    }   
+
+    .header__burger::after {
+        content: "";
+        height: 2px;
+        width: 30px;
+        background-color: #fff;
+    }
+
+    .header__burger span {
+        height: 2px;
+        width: 30px;
+        background-color: #fff;
+    }
+}
+
 .main {
-    grid-area: main;
+    /* grid-area: main; */
     padding: 30px 15px;
     /* display: grid;
     grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr; */
 }
 
-/*mobile first*/
-@media (min-width: 992px) { 
-    display: grid;
-    grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
-}
-
 
 .sidebar {
-    grid-column: 2 / 3; /*расположение во второй колонке*/
+    /* grid-column: 2 / 3; */
     background-color: #7a956b;
     padding: 30px 15px;
+    margin: 0 0 30px 0;
 }
+
+
 .sidebar__menu {
 }
 .sidebar__list {
@@ -81,18 +122,49 @@ body {
     font-size: 20px;
 }
 .content {
-    grid-column: 3 / 4; /*расположение в третьей колонке*/
-    padding: 0 0 0 30px;
+
 }
 .content__title {
+    color: #fff;
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 15px 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .content__gallery {
     margin: 0 0 30px 0;
 }
+
+@media (min-width: 992px) { /*min-width - mobile first*/
+
+    .main {
+        grid-area: main;
+        display: grid;
+        grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr; 
+    }
+
+    .sidebar {
+        grid-column: 2 / 3; /*расположение во второй колонке*/
+        margin: 0;
+    }
+
+    .content {
+        grid-column: 3 / 4; /*расположение в третьей колонке*/
+        padding: 0 0 0 30px;
+    }
+
+    
+}
+
 .gallery {
 
 }
 .gallery__title {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .gallary__items {
     display: grid;
@@ -119,23 +191,41 @@ body {
     object-fit: cover;
 }
 .gellary__item_big {
-    /*Объект будет занимать две колонки и две строки*/
-    grid-column: span 2;
-    grid-row: span 2;
+}
+
+@media (min-width: 767px) {
+    .gellary__item_big {
+        /*Объект будет занимать две колонки и две строки*/
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 }
 .content__products {
 }
 .products {
 }
 .products__title {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 10px 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .products__items {
     display: grid;
     column-gap: 30px;
     row-gap: 50px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 1fr; /*строки будут заполнять все пространство и подстраиваться друг под друга*/
+    /* grid-auto-rows: 1fr;  */
+    /* grid-auto-rows: 1fr; строки будут заполнять все пространство и подстраиваться друг под друга - если у одной из строк текст будет большой и он отодвинет кнопку, то кнопка подвинится у всех даже с меньшим текстом*/
 }
+
+@media (min-width: 426px) {
+    .products__items {
+        grid-auto-rows: 1fr;
+    }
+}
+
 .products__item {
     display: grid; /*все строчные объектв в grid становятся блочными*/
     grid-auto-flow: row;
@@ -181,9 +271,34 @@ body {
     grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
 }
 .footer__copy {
-    grid-column: 2 / 3;
+    /* grid-column: 2 / 3; */
 }
 .footer__text {
-    text-align: right;
-    grid-column: 3 / 4;
+    /* text-align: right;
+    grid-column: 3 / 4; */
+}
+
+@media (min-width: 550px) {
+    .footer__copy {
+    grid-column: 2 / 3;
+    }
+    .footer__text {
+        text-align: right;
+        grid-column: 3 / 4;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer {
+        grid-template: 1fr 1fr / 1fr;
+        text-align: center;
+    }
+
+    .footer__copy {
+        order: 2;
+    }
+
+    .footer__text {
+        order: 1;
+    }
 }
